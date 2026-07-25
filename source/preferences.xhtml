@@ -1,0 +1,275 @@
+<vbox
+	id="zotero-prefpane-word-to-anki"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+>
+	<html:style>
+		#wta-shell {
+			padding: 12px 18px 24px;
+			color: #2f2f2f;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+		}
+
+		#wta-panel {
+			max-width: 780px;
+		}
+
+		.wta-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 12px;
+			margin-bottom: 8px;
+		}
+
+		.wta-title {
+			margin: 0;
+			font-size: 22px;
+			font-weight: 700;
+		}
+
+		.wta-subtitle {
+			margin: 0 0 18px;
+			font-size: 13px;
+			line-height: 1.6;
+			color: #666;
+		}
+
+		.wta-toggle-link {
+			padding: 0;
+			border: none;
+			background: transparent;
+			color: #0b57d0;
+			font-size: 13px;
+			cursor: pointer;
+		}
+
+		.wta-form {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+		}
+
+		.wta-field {
+			display: grid;
+			grid-template-columns: 160px minmax(0, 1fr);
+			align-items: center;
+			column-gap: 14px;
+			row-gap: 6px;
+		}
+
+		.wta-field-label {
+			font-size: 14px;
+			font-weight: 600;
+			color: #333;
+		}
+
+		.wta-field-control {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			min-width: 0;
+		}
+
+		.wta-input {
+			flex: 1;
+			min-width: 0;
+			box-sizing: border-box;
+			padding: 6px 10px;
+			border-radius: 6px;
+			border: 1px solid #c7c7c7;
+			background: #fff;
+			font-size: 13px;
+			line-height: 1.4;
+			color: #222;
+			outline: none;
+		}
+
+		.wta-input:focus {
+			border-color: #0b57d0;
+			box-shadow: 0 0 0 2px rgba(11, 87, 208, 0.15);
+		}
+
+		.wta-action {
+			padding: 6px 12px;
+			border-radius: 6px;
+			border: 1px solid #c7c7c7;
+			background: #fff;
+			font-size: 13px;
+			color: #222;
+			cursor: pointer;
+			white-space: nowrap;
+		}
+
+		.wta-options {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 8px;
+			margin: 4px 0 0 174px;
+		}
+
+		.wta-check {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			font-size: 13px;
+			color: #333;
+		}
+
+		.wta-actions {
+			display: flex;
+			gap: 8px;
+			margin: 8px 0 0 174px;
+		}
+
+		#wta-advanced {
+			margin: 16px 0 0 174px;
+			padding: 12px;
+			border: 1px solid #d9d9d9;
+			border-radius: 8px;
+			background: #fafafa;
+		}
+
+		.wta-advanced-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+			gap: 10px 12px;
+		}
+
+		.wta-advanced-item {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+		}
+
+		.wta-advanced-label {
+			font-size: 12px;
+			color: #555;
+		}
+
+		#wta-save-status {
+			margin: 10px 0 0 174px;
+			font-size: 12px;
+			line-height: 1.5;
+			color: #555;
+		}
+
+		.wta-hint {
+			margin: 8px 0 0 174px;
+			font-size: 12px;
+			line-height: 1.6;
+			color: #666;
+		}
+
+		@media (max-width: 720px) {
+			.wta-field {
+				grid-template-columns: 1fr;
+			}
+
+			.wta-options,
+			.wta-actions,
+			#wta-advanced,
+			#wta-save-status,
+			.wta-hint {
+				margin-left: 0;
+			}
+		}
+	</html:style>
+
+	<html:div id="wta-shell">
+		<html:div id="wta-panel">
+			<html:div class="wta-header">
+				<html:h2 class="wta-title">配置设置</html:h2>
+				<button id="wta-advanced-toggle" class="wta-toggle-link" label="展开高级"></button>
+			</html:div>
+			<html:p class="wta-subtitle">
+				在 Zotero Reader 里选中单个英文单词后，就能右键或点弹窗按钮直接导入 Anki。
+			</html:p>
+
+			<html:div class="wta-form">
+				<html:div class="wta-field">
+					<html:label class="wta-field-label" for="wta-api-key">DeepSeek API Key</html:label>
+					<html:div class="wta-field-control">
+						<html:input id="wta-api-key" class="wta-input" type="password"/>
+						<button id="wta-toggle-api-key" class="wta-action" label="显示"></button>
+					</html:div>
+				</html:div>
+
+				<html:div class="wta-field">
+					<html:label class="wta-field-label" for="wta-model">模型</html:label>
+					<html:div class="wta-field-control">
+						<html:input id="wta-model" class="wta-input" type="text" placeholder="deepseek-v4-flash（或 deepseek-v4-pro）"/>
+					</html:div>
+				</html:div>
+
+				<html:div class="wta-field">
+					<html:label class="wta-field-label" for="wta-deck">导入牌组</html:label>
+					<html:div class="wta-field-control">
+						<html:input id="wta-deck" class="wta-input" type="text" list="wta-deck-list" placeholder="自动读取 Anki 现有牌组"/>
+						<html:datalist id="wta-deck-list"></html:datalist>
+						<button id="wta-refresh-decks" class="wta-action" label="刷新"></button>
+					</html:div>
+				</html:div>
+			</html:div>
+
+			<html:div class="wta-options">
+				<html:label class="wta-check">
+					<html:input id="wta-enable-audio" type="checkbox"/>
+					<html:span>导入时同步写入音频</html:span>
+				</html:label>
+				<html:label class="wta-check">
+					<html:input id="wta-allow-duplicate" type="checkbox"/>
+					<html:span>允许重复导入同名单词</html:span>
+				</html:label>
+				<html:label class="wta-check">
+					<html:input id="wta-auto-create-model" type="checkbox"/>
+					<html:span>缺少词卡笔记类型时自动创建「词源卡」</html:span>
+				</html:label>
+			</html:div>
+
+			<html:div class="wta-actions">
+				<button id="wta-save" class="wta-action" label="保存设置"></button>
+				<button id="wta-clear-key" class="wta-action" label="清除密钥"></button>
+			</html:div>
+
+			<html:div id="wta-advanced" hidden="hidden">
+				<html:div class="wta-advanced-grid">
+					<html:div class="wta-advanced-item">
+						<html:label class="wta-advanced-label" for="wta-base-url">DeepSeek Base URL</html:label>
+						<html:input id="wta-base-url" class="wta-input" type="text" placeholder="https://api.deepseek.com"/>
+					</html:div>
+					<html:div class="wta-advanced-item">
+						<html:label class="wta-advanced-label" for="wta-anki-url">AnkiConnect URL</html:label>
+						<html:input id="wta-anki-url" class="wta-input" type="text" placeholder="http://127.0.0.1:8765"/>
+					</html:div>
+					<html:div class="wta-advanced-item">
+						<html:label class="wta-advanced-label" for="wta-note-model">手动笔记类型</html:label>
+						<html:input id="wta-note-model" class="wta-input" type="text" placeholder="留空则自动识别"/>
+					</html:div>
+					<html:div class="wta-advanced-item">
+						<html:label class="wta-advanced-label" for="wta-tags">标签</html:label>
+						<html:input id="wta-tags" class="wta-input" type="text" placeholder="zotero-word"/>
+					</html:div>
+					<html:div class="wta-advanced-item">
+						<html:label class="wta-advanced-label" for="wta-front-field">Front 字段</html:label>
+						<html:input id="wta-front-field" class="wta-input" type="text" placeholder="留空则自动识别"/>
+					</html:div>
+					<html:div class="wta-advanced-item">
+						<html:label class="wta-advanced-label" for="wta-back-field">Back 字段</html:label>
+						<html:input id="wta-back-field" class="wta-input" type="text" placeholder="留空则自动识别"/>
+					</html:div>
+					<html:div class="wta-advanced-item">
+						<html:label class="wta-advanced-label" for="wta-audio-field">音频字段</html:label>
+						<html:input id="wta-audio-field" class="wta-input" type="text" placeholder="留空则自动识别"/>
+					</html:div>
+				</html:div>
+			</html:div>
+
+			<html:p id="wta-save-status"></html:p>
+			<html:p class="wta-hint">
+				默认会自动优先寻找带完整词卡字段的笔记类型；如果找不到，会自动创建「词源卡」（含发音模板与样式）。关闭上面的自动创建后，才会回退到 Basic 或可写入的双字段模型。
+			</html:p>
+		</html:div>
+	</html:div>
+</vbox>

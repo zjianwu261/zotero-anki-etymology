@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Word to Anki",
+  "version": "0.1.16",
+  "homepage_url": "https://example.com/word-to-anki",
+  "description": "Send selected English words from Zotero Reader to Anki via DeepSeek and Cambridge audio.",
+  "applications": {
+    "zotero": {
+      "id": "zotero-word-to-anki@maverick.local",
+      "update_url": "https://example.com/word-to-anki/updates.json",
+      "strict_min_version": "7.0",
+      "strict_max_version": "9.*"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+# ── 敏感 / API 密钥 ──
+.env
+*.env
+**/api_key*
+**/apikey*
+
+# ── 数据文件（词表 / 进度 / 错误日志 / 输出） ──
+files/
+*.tsv
+*.csv
+progress.json
+errors.log
+audio_progress.json
+audio_errors.log
+*.progress
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+*.pyo
+
+# ── 系统 ──
+.DS_Store
+Thumbs.db
+
+# ── IDE ──
+.vscode/
+.idea/
+*.swp
+*.swo

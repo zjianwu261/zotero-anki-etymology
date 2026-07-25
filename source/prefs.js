@@ -1,0 +1,13 @@
+pref("extensions.zotero-word-to-anki.deepseekApiKey", "");
+pref("extensions.zotero-word-to-anki.deepseekBaseURL", "https://api.deepseek.com");
+pref("extensions.zotero-word-to-anki.deepseekModel", "deepseek-v4-flash");
+pref("extensions.zotero-word-to-anki.ankiConnectURL", "http://127.0.0.1:8765");
+pref("extensions.zotero-word-to-anki.deckName", "Default");
+pref("extensions.zotero-word-to-anki.modelName", "");
+pref("extensions.zotero-word-to-anki.frontField", "");
+pref("extensions.zotero-word-to-anki.backField", "");
+pref("extensions.zotero-word-to-anki.audioField", "");
+pref("extensions.zotero-word-to-anki.tags", "zotero-word");
+pref("extensions.zotero-word-to-anki.enableAudio", true);
+pref("extensions.zotero-word-to-anki.allowDuplicate", false);
+pref("extensions.zotero-word-to-anki.autoCreateModel", true);
