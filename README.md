@@ -1,4 +1,4 @@
-# Word to Anki — Zotero 9 插件
+# zotero_anki_etymology — Zotero 9 插件
 
 在 Zotero Reader 中选中英文单词，一键生成词源卡并导入 Anki。
 
@@ -15,13 +15,13 @@
 
 ## 安装
 
-1. 下载 [dist/word-to-anki-0.1.16.xpi](dist/word-to-anki-0.1.16.xpi)
+1. 下载 [dist/zotero_anki_etymology-0.1.21.xpi](dist/zotero_anki_etymology-0.1.21.xpi)
 2. Zotero → 工具 → 插件 → ⚙️ → Install Plugin From File → 选择 `.xpi`
 3. 重启 Zotero
 
 ## 配置
 
-打开 Zotero → Settings → Word to Anki，填写：
+打开 Zotero → Settings → zotero_anki_etymology，填写：
 
 | 字段 | 说明 |
 |------|------|
@@ -77,7 +77,7 @@ DeepSeek 已于 2026-07-24 下线 `deepseek-chat` / `deepseek-reasoner`，现在
 
 ```bash
 cd source
-zip -r ../dist/word-to-anki-$(jq -r .version manifest.json).xpi . -x "*.DS_Store"
+zip -r ../dist/zotero_anki_etymology-$(jq -r .version manifest.json).xpi . -x "*.DS_Store"
 ```
 
 ## License

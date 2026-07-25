@@ -224,7 +224,7 @@
 				</html:label>
 				<html:label class="wta-check">
 					<html:input id="wta-auto-create-model" type="checkbox"/>
-					<html:span>缺少词卡笔记类型时自动创建「词源卡」</html:span>
+					<html:span>强制使用「词源卡」笔记类型（缺失时自动创建并补全字段）</html:span>
 				</html:label>
 			</html:div>
 
@@ -268,7 +268,7 @@
 
 			<html:p id="wta-save-status"></html:p>
 			<html:p class="wta-hint">
-				默认会自动优先寻找带完整词卡字段的笔记类型；如果找不到，会自动创建「词源卡」（含发音模板与样式）。关闭上面的自动创建后，才会回退到 Basic 或可写入的双字段模型。
+				默认只写入带完整词卡字段的笔记类型：优先复用已有的结构化笔记类型，没有就自动创建「词源卡」（含发音模板与样式），字段被改动过也会自动补回来，不会再回退到 Basic。取消勾选后才允许回退到 Basic 或其他双字段模型。
 			</html:p>
 		</html:div>
 	</html:div>

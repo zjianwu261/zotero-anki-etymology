@@ -10,7 +10,7 @@ async function startup({ id, version, rootURI }) {
 	ZoteroWordToAnkiPrefPaneID = await Zotero.PreferencePanes.register({
 		pluginID: id,
 		id: "zotero-prefpane-word-to-anki",
-		label: "Word to Anki",
+		label: "zotero_anki_etymology",
 		src: rootURI + "preferences.xhtml",
 		scripts: [rootURI + "preferences.js"],
 	});

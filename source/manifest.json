@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Word to Anki",
-  "version": "0.1.16",
+  "name": "zotero_anki_etymology",
+  "version": "0.1.21",
   "homepage_url": "https://example.com/word-to-anki",
   "description": "Send selected English words from Zotero Reader to Anki via DeepSeek and Cambridge audio.",
   "applications": {
