@@ -1,4 +1,4 @@
-# zotero_anki_etymology — Zotero 9 插件
+# zotero-anki-etymology — Zotero 9 插件
 
 在 Zotero Reader 中选中英文单词，一键生成词源卡并导入 Anki。
 
